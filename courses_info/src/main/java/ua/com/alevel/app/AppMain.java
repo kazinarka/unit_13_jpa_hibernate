@@ -12,8 +12,8 @@ public class AppMain {
         Configuration configuration = new Configuration().configure();
         try(SessionFactory sessionFactory = configuration.buildSessionFactory()){
             EntityManager entityManager = sessionFactory.createEntityManager();
-            LessonInfo nextLesson = new LessonInfo();
-            nextLesson.findByStudentId(entityManager, 1L);
+            LessonInfo lessonInfo = new LessonInfo();
+            lessonInfo.findByStudentId(entityManager, 1L);
             entityManager.close();
         }
     }
